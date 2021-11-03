@@ -1,0 +1,34 @@
+version: '3.3'
+services:
+  db:
+    image: postgres
+    restart: always
+    networks:
+      - local
+    environment:
+      POSTGRES_DB: 'GHDC'
+      POSTGRES_USER: 'guillaume'
+      POSTGRES_PASSWORD: 'guillaume'
+    ports:
+      # <Port exposed> : < Port running inside container>
+      - '54321:5432'
+    expose:
+      - '54321'
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  api:
+    build: ./graphql
+    networks:
+      - local
+    depends_on:
+      - db
+    ports:
+      - '4001:4000'
+    stdin_open: true
+    tty: true
+    environment:
+      DB_HOST: host.docker.internal
+volumes:
+  db:
+networks:
+  local:

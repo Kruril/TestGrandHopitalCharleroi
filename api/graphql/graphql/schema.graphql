@@ -1,0 +1,62 @@
+type Patient {
+    id: Int
+    admin: Admin
+    biometrics: Biometrics
+    biologicalConstant: BiologicalConstante
+    parameters: Parameters
+    addiction: Addiction
+}
+
+type Admin {
+    firstname: String
+    lastname: String
+    birth: String
+    gender: Gender
+}
+
+enum Gender {
+    Male
+    Female
+    Other
+}
+type Biometrics {
+    weight: Int
+    size: Int
+}
+
+type BiologicalConstante {
+    hba1c: Float
+    total_cholesterol: Int
+    cholesterol_hdl: Int
+}
+
+type Parameters {
+    pss: Int
+}
+
+type Addiction {
+    tobacco_consumption: Int
+}
+
+input PatientDatas {
+    id: Int
+    firstname: String
+    lastname: String
+    birth: String
+    gender: Gender
+    weight: Int
+    size: Int
+    hba1c: Float
+    total_cholesterol: Int
+    cholesterol_hdl: Int
+    pss: Int
+    tobacco_consumption: Int
+}
+
+type Query {
+    patients(targetId: Int): [Patient]
+}
+
+type Mutation {
+    addPatient(patient: PatientDatas): Boolean
+}
