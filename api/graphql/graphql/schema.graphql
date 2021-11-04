@@ -7,10 +7,12 @@ type Patient {
     addiction: Addiction
 }
 
+scalar Date
+
 type Admin {
     firstname: String
     lastname: String
-    birth: String
+    birth: Date
     gender: Gender
 }
 
@@ -42,7 +44,7 @@ input PatientDatas {
     id: Int
     firstname: String
     lastname: String
-    birth: String
+    birth: Date
     gender: Gender
     weight: Int
     size: Int
