@@ -7,7 +7,8 @@ export function PatientSelect(props) {
 
     function isSelected() {
         setSelected(!selected)
-        console.log(selected)
+        console.log(props.input)
+        props.input("")
     }
 
     return (

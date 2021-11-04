@@ -15,7 +15,7 @@ export function SearchResult(props) {
 
     for (let m of match) {
         displayMatch.push(
-            <PatientSelect patient={m} key={m.id}/>
+            <PatientSelect patient={m} key={m.id} input={(blank) => props.input(blank)}/>
         )
     }
 

@@ -1,7 +1,6 @@
 import {getPatients} from "../services/PatientsServices";
 import React from "react";
 import {SearchBar} from "./SearchBar";
-import {SearchResult} from "./SearchResult";
 
 
 class Search extends React.Component {
@@ -10,7 +9,6 @@ class Search extends React.Component {
         super(props);
         this.state = {
             patients: [],
-            result: []
         }
     }
 
@@ -37,8 +35,8 @@ class Search extends React.Component {
 
         return (
             <div className={"float-left w-1/6 h-full p-3 border-2"}>
-                <SearchBar patients={this.state.patients} result={ (result => this.setState({result}))}/>
-                <SearchResult patients={this.state.patients} result={this.state.result}/>
+                <SearchBar patients={this.state.patients}/>
+
             </div>
         )
     }
