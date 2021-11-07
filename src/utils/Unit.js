@@ -1,6 +1,6 @@
 export const Unit = {
-    size: "kg",
-    weight: "cm",
+    size: "cm",
+    weight: "kg",
     tobacco_consumption: "p/an",
     birth: "",
     gender: "",
