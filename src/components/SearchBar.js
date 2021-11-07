@@ -1,5 +1,6 @@
 import {SearchResult} from "./SearchResult";
 import {useState} from "react";
+import {SelectedView} from "./SelectedView";
 
 
 export function SearchBar(props) {
@@ -10,10 +11,11 @@ export function SearchBar(props) {
     for (let patient of props.patients) {
         if (patient.selected) {
             patients.push(
-                <li key={patient.id}>{patient.admin.firstname + " " + patient.admin.lastname}</li>
+                <SelectedView patient={patient} key={patient.id}/>
             )
         }
     }
+
     return (
         <div className="container h-auto flex flex-col justify-center rounded">
             <div className="relative w-full flex-1">
@@ -21,10 +23,9 @@ export function SearchBar(props) {
                        className="w-full h-14 pl-3 pr-8 rounded z-0 focus:outline-none shadow-lg bg-gray-200"
                        placeholder="Patient ..." onChange={(result) => {setResult(result.target.value); setInputValue(result.target.value)}} value={inputValue}/>
             </div>
-            <SearchResult patients={props.patients} result={result} className={"z-50"}/>
-            <ul className={"z-10"}>
-                {patients}
-            </ul>
+            <SearchResult patients={props.patients} result={result} />
+            {patients}
+
         </div>
     )
 }

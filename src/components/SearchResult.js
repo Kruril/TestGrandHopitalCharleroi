@@ -45,7 +45,7 @@ export function SearchResult(props) {
     }
 
     return (
-        <div>
+        <div className={"z-40"}>
             {displayMatch}
         </div>
     )

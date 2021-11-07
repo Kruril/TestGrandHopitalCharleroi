@@ -31,7 +31,7 @@ class Search extends React.Component {
         }
 
         return (
-            <div className={"float-left w-1/6 h-full p-3 border-2"}>
+            <div className={"float-left w-1/5 h-full p-3 border-2"}>
                 <SearchBar patients={this.state.patients} />
             </div>
         )
