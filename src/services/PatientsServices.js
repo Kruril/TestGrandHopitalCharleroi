@@ -1,4 +1,4 @@
-import {ApiGetPatients} from "./ApiService";
+import {ApiGetPatient, ApiGetPatients} from "./ApiService";
 let patients = undefined
 
 function getPatients() {
@@ -17,4 +17,14 @@ export function patientList() {
     }
 
     return patients
+}
+
+export function getPatientInfo(id) {
+    return ApiGetPatient(id)
+        .then( (data) => {
+            return {success: true, data: data.patients[0], message: ""}
+        })
+        .catch(reason => {
+            return {success: false, data: null, message: reason}
+        })
 }
