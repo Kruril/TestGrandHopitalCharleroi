@@ -1,12 +1,20 @@
 import {ApiGetPatients} from "./ApiService";
+let patients = undefined
 
-
-export function getPatients(callback) {
-    ApiGetPatients()
+function getPatients() {
+    return ApiGetPatients()
         .then( (data) => {
-            callback({success: true, data: data.patients, message: ""})
+            return {success: true, data: data.patients, message: ""}
         })
         .catch(reason => {
-            callback({success: false, data: null, message: reason})
+            return {success: false, data: null, message: reason}
         })
+}
+
+export function patientList() {
+    if (patients === undefined) {
+        patients = getPatients()
+    }
+
+    return patients
 }

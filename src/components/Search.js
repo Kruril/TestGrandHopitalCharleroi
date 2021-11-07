@@ -1,6 +1,6 @@
-import {getPatients} from "../services/PatientsServices";
 import React from "react";
 import {SearchBar} from "./SearchBar";
+import {patientList} from "../services/PatientsServices";
 
 
 class Search extends React.Component {
@@ -12,18 +12,15 @@ class Search extends React.Component {
         }
     }
 
-    doSearch(){
-        getPatients(
-            (result) => {
-                if (result.success) {
-                    this.setState({patients: result.data})
-                }
-            }
-        )
-    }
-
     componentDidMount() {
-        this.doSearch()
+        if (this.state.patients.length === 0) {
+            patientList()
+                .then((result) => {
+                    if (result.success) {
+                        this.setState({patients: result.data})
+                    }
+                })
+        }
     }
 
     display() {
@@ -35,8 +32,7 @@ class Search extends React.Component {
 
         return (
             <div className={"float-left w-1/6 h-full p-3 border-2"}>
-                <SearchBar patients={this.state.patients}/>
-
+                <SearchBar patients={this.state.patients} />
             </div>
         )
     }
