@@ -25,6 +25,7 @@ export function SearchResult(props) {
         })
 
         isEnough()
+        props.update()
     }
 
     function isEnough() {

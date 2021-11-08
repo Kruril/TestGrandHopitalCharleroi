@@ -13,6 +13,7 @@ export function SearchBar(props) {
             patients.push(
                 <SelectedView patient={patient} key={patient.id}/>
             )
+
         }
     }
 
@@ -21,9 +22,12 @@ export function SearchBar(props) {
             <div className="relative w-full flex-1">
                 <input type="text"
                        className="w-full h-14 pl-3 pr-8 rounded z-0 focus:outline-none shadow-lg bg-gray-200"
-                       placeholder="Patient ..." onChange={(result) => {setResult(result.target.value); setInputValue(result.target.value)}} value={inputValue}/>
+                       placeholder="Patient ..." onChange={(result) => {
+                    setResult(result.target.value);
+                    setInputValue(result.target.value)
+                }} value={inputValue}/>
             </div>
-            <SearchResult patients={props.patients} result={result} />
+            <SearchResult patients={props.patients} result={result} update={props.update}/>
             {patients}
 
         </div>

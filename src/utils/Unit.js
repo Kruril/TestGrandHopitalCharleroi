@@ -9,5 +9,6 @@ export const Unit = {
     total_cholesterol: "mg/dl",
     pss: "mmHg",
     firstname: "",
-    lastname: ""
+    lastname: "",
+    bmi: 'kg/m²'
 }

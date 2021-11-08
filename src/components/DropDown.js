@@ -32,7 +32,7 @@ export function DropDown(props) {
             )
         } else {
             content.push(
-                <div className={"pl-3 select-none " + (open ? "" : "hidden")} key={constante}>
+                <div className={"pl-3 select-none border-b " + (open ? "" : "hidden")} key={constante}>
                     {Title[constante]}
                     <span className={"float-right"}>
                     {props.content[constante]} {Unit[constante]}
