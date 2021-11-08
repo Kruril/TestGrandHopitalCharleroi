@@ -15,7 +15,6 @@ export function SelectedView(props) {
             getPatientInfo(props.patient.id)
                 .then(result => {
                     if (result.success) {
-                        console.log(result.data)
                         setPatient(result.data)
                     }
                 })

@@ -8,11 +8,11 @@ export const Title = {
     hba1c: "HbA1c",
     total_cholesterol: "Cholestérol total",
     pss: "PSS",
-    admin: "Information Personnelle",
+    admin: "Informations Personnelles",
     biologicalConstant: "Constantes biologiques",
     biometrics: "Biométries",
     parameters: "Paramètres",
-    addiction: "Addiction",
+    addiction: "Addictions",
     firstname: "Prénom",
     lastname: "Nom de famille"
 }
