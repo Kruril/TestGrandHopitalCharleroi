@@ -50,8 +50,6 @@ export function GraphView(props) {
                     display: true,
                     text: props.unit,
                     align: "end",
-                    min:0,
-                    max:100
                 }
             }
         }

@@ -17,7 +17,7 @@ services:
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
   api:
-    build: ./graphql
+    build: ./api/graphql
     networks:
       - local
     depends_on:
@@ -28,7 +28,15 @@ services:
     tty: true
     environment:
       DB_HOST: host.docker.internal
-volumes:
-  db:
+  web:
+    build: ./web
+    ports:
+      - '3000:3000'
+    expose:
+      - '3000'
+    depends_on:
+      - api
+    environment:
+      DB_HOST: host.docker.internal
 networks:
   local:

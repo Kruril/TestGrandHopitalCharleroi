@@ -18,9 +18,11 @@ Une fois Docker installé, ouvrez un Terminal de commandes à la racine du proje
 > docker-compose up -d
 > ```
 
+Lors de la première execution la commande peut mettre plusieurs minutes avant d'avoir fini. Le temps de pull les images Docker
+
 Vous pouvez ensuite vous rendre sur votre navigateur et aller à l'adresse suivante :
 
-> ```http request
+> ```
 > localhost:3000
 > ```
 
