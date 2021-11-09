@@ -3,7 +3,12 @@ import {Search} from "../components/Search";
 import {patientList} from "../services/PatientsServices";
 import {useEffect, useState} from "react";
 
-
+/**
+ * Patients view
+ * Search and Graphics
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export function Patients() {
     const [patients, setPatients] = useState([])
     const [graphs, setGraphs] = useState(<GraphsView patients={patients}/>)

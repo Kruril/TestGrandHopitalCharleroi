@@ -1,3 +1,4 @@
+// all title for graphic or selected view
 export const Title = {
     size: "Taille",
     weight: "Poids",

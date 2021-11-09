@@ -1,6 +1,10 @@
 import request, {gql} from "graphql-request";
 
-
+/**
+ * Get all patients
+ * @returns {Promise<unknown>}
+ * @constructor
+ */
 export function ApiGetPatients() {
     return new Promise((resolve, reject) => {
         const query = gql`
@@ -25,7 +29,13 @@ export function ApiGetPatients() {
     })
 }
 
-
+/**
+ * Get patient with specific id
+ * return all data for selected patient
+ * @param id
+ * @returns {Promise<unknown>}
+ * @constructor
+ */
 export function ApiGetPatient(id) {
     return new Promise((resolve, reject) => {
         const query = gql`

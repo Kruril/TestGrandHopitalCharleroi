@@ -2,6 +2,13 @@ import Icon from "@mdi/react";
 import {mdiCheckCircle, mdiCheckCircleOutline} from "@mdi/js";
 import {useState} from "react";
 
+
+/**
+ * Return div with onClick event to select a patient
+ * @param props
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export function PatientSelect(props) {
     const [selected, setSelected] = useState(props.patient.selected);
 

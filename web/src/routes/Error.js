@@ -1,8 +1,8 @@
-export default function Error() {
+export function Error() {
 
     return (
-        <div>
-            Error
+        <div className={"w-full h-full text-4xl"}>
+            Error Page not found
         </div>
     )
 }

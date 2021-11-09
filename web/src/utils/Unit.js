@@ -1,3 +1,5 @@
+// all unit use in application
+// util for graphic or selected view
 export const Unit = {
     size: "cm",
     weight: "kg",

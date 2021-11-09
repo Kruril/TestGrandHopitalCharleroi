@@ -6,6 +6,9 @@ export function SearchResult(props) {
     let match = []
     if (props.result.length > 0) {
         props.patients.forEach(function (item) {
+            /**
+             * add match patient to list. Case is not important
+             */
             if (item.admin.firstname.toUpperCase().includes(props.result.toUpperCase()) ||
                 item.admin.lastname.toUpperCase().includes(props.result.toUpperCase())) {
                 item.selected = item.selected === undefined ? false : item.selected
@@ -28,6 +31,9 @@ export function SearchResult(props) {
         props.update()
     }
 
+    /**
+     * Check how many patients are selected
+     */
     function isEnough() {
         let tmp = []
         props.patients.forEach(function (item) {

@@ -1,6 +1,6 @@
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import Error from "./routes/Error";
+import {Error} from "./routes/Error";
 import {Patients} from "./routes/Patients";
 
 function App() {

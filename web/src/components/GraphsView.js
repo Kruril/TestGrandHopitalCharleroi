@@ -7,6 +7,10 @@ import Bmi from "../utils/Bmi";
 
 
 export function GraphsView(props) {
+    /**
+     * selected: state contain list of patients where selected = true
+     * prevProps: contain previous props
+     */
     const [selected, setSelected] = useState([])
     const [prevProps, setPrevProps] = useState(props)
 
@@ -42,6 +46,15 @@ export function GraphsView(props) {
                 if (!names.includes(patient.admin.lastname + " " + patient.admin.firstname)) {
                     names.push(patient.admin.lastname + " " + patient.admin.firstname)
                 }
+
+                /**
+                 * Check if subCategory not equals at id or admin
+                 * Condition true :
+                 * Enter in a switch if data will format with a specific format add case like biometrics subCategory
+                 * for patient
+                 * Condition false:
+                 * Pass
+                 */
                 if (subCategory !== "id" && subCategory !== "admin") {
                     switch (subCategory) {
                         case "biometrics":

@@ -45,7 +45,6 @@ export function SelectedView(props) {
                 {patient.admin.firstname + " " + patient.admin.lastname}
                 <Icon path={open ? mdiChevronUp : mdiChevronDown} size={1} className={"float-right"}/>
             </div>
-            {/*<DropDown open={open} patient={patient} title={"Biométries"}/>*/}
             {contents}
         </div>
     )

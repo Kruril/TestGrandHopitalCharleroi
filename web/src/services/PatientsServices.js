@@ -1,6 +1,11 @@
 import {ApiGetPatient, ApiGetPatients} from "./ApiService";
+
 let patients = undefined
 
+/**
+ * Get all patients
+ * @returns {Promise<{data: *, success: boolean, message: string} | {data: null, success: boolean, message: *}>}
+ */
 function getPatients() {
     return ApiGetPatients()
         .then( (data) => {
@@ -11,6 +16,10 @@ function getPatients() {
         })
 }
 
+/**
+ * Return all patients
+ * @returns {*}
+ */
 export function patientList() {
     if (patients === undefined) {
         patients = getPatients()
@@ -19,6 +28,12 @@ export function patientList() {
     return patients
 }
 
+
+/**
+ * Return all information for specific patient
+ * @param id
+ * @returns {Promise<{data: *, success: boolean, message: string} | {data: null, success: boolean, message: *}>}
+ */
 export function getPatientInfo(id) {
     return ApiGetPatient(id)
         .then( (data) => {

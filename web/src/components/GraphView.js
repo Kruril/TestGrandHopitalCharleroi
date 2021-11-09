@@ -5,6 +5,10 @@ import {Title} from "../utils/Title";
 
 export function GraphView(props) {
     let datasets = []
+
+    /**
+     * for each subCategory add a datasets
+     */
     for (const subCategory in props.elements.values) {
         datasets.push(
             {
