@@ -73,3 +73,11 @@ Lecture du graphique :
 - l'axe horizontal : Il indique le nom du patient
 
 Pour voir la valeur de la barre sur le graphique, il suffit de laisser votre curseur sur la barre.
+
+## Technologies utilisées :
+- GraphQL
+- Docker
+- NodeJS
+- ChartJS
+- Material Design Icon
+- Tailwind CSS
